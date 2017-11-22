@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.RomanNumerals", "Var
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.RomanNumerals.Tests", "Varian.RomanNumerals.Tests\Varian.RomanNumerals.Tests.csproj", "{466508B6-57E2-41BD-BE66-9A93CB45B9EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.Common", "Varian.Common\Varian.Common.csproj", "{6E5708D1-1797-4D95-AFAD-A65B6567C41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.Common.Tests", "Varian.Common.Tests\Varian.Common.Tests.csproj", "{115CA533-2A3C-4B9C-A4D6-F96C5DC7E691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{466508B6-57E2-41BD-BE66-9A93CB45B9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{466508B6-57E2-41BD-BE66-9A93CB45B9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{466508B6-57E2-41BD-BE66-9A93CB45B9EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5708D1-1797-4D95-AFAD-A65B6567C41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5708D1-1797-4D95-AFAD-A65B6567C41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5708D1-1797-4D95-AFAD-A65B6567C41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5708D1-1797-4D95-AFAD-A65B6567C41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{115CA533-2A3C-4B9C-A4D6-F96C5DC7E691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{115CA533-2A3C-4B9C-A4D6-F96C5DC7E691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{115CA533-2A3C-4B9C-A4D6-F96C5DC7E691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{115CA533-2A3C-4B9C-A4D6-F96C5DC7E691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

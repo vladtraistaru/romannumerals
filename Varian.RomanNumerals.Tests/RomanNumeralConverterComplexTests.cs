@@ -18,68 +18,38 @@ namespace Varian.RomanNumerals.Tests
             converter = kernel.Get<IRomanNumeralConverter>();
         }
 
-
-        [Test]
-        public void Convert_2()
+        [TestCase(2,"II")]
+        [TestCase(3, "III")]
+        [TestCase(4, "IV")]
+        [TestCase(6, "VI")]
+        [TestCase(7, "VII")]
+        [TestCase(8, "VIII")]
+        [TestCase(9, "IX")]
+        public void GeneralTest_Under10(int number, string romanNumeral)
         {
-            var roman = converter.Convert(4);
-            Assert.AreEqual("II", roman.RomanNotation);
+            var roman = converter.Convert(number);
+            Assert.AreEqual(romanNumeral, roman.RomanNotation);
         }
 
-        [Test]
-        public void Convert_3()
+        [TestCase(11, "X I")]
+        [TestCase(12, "X II")]
+        [TestCase(20, "XX")]
+        public void GeneralTest_10_100(int number, string romanNumeral)
         {
-            var roman = converter.Convert(4);
-            Assert.AreEqual("III", roman.RomanNotation);
+            var roman = converter.Convert(number);
+            Assert.AreEqual(romanNumeral, roman.RomanNotation);
         }
 
-        [Test]
-        public void Convert_4()
+        [TestCase(1234, "M CC XXX IV")]
+        [TestCase(12, "X II")]
+        [TestCase(1954, "M CM L IV")]
+        [TestCase(1990, "M CM XC")]
+        [TestCase(2014, "MM X IV")]
+        [TestCase(2006, "MM VI")]
+        public void GeneralTest_Complex(int number, string romanNumeral)
         {
-            var roman = converter.Convert(4);
-            Assert.AreEqual("IV", roman.RomanNotation);
-        }
-
-        [Test]
-        public void Convert_6()
-        {
-            var roman = converter.Convert(6);
-            Assert.AreEqual("VI", roman.RomanNotation);
-        }
-
-        [Test]
-        public void Convert_7()
-        {
-            var roman = converter.Convert(6);
-            Assert.AreEqual("VII", roman.RomanNotation);
-        }
-
-        [Test]
-        public void Convert_8()
-        {
-            var roman = converter.Convert(6);
-            Assert.AreEqual("VIII", roman.RomanNotation);
-        }
-
-        [Test]
-        public void Convert_9()
-        {
-            var roman = converter.Convert(6);
-            Assert.AreEqual("IX", roman.RomanNotation);
-        }
-
-        [Test]
-        public void Convert_11()
-        {
-            var roman = converter.Convert(6);
-            Assert.AreEqual("XI", roman.RomanNotation);
-        }
-
-        [Test]
-        public void Convert_1234()
-        {
-            var roman = converter.Convert(6);
-            Assert.AreEqual("MCCXXXIV", roman.RomanNotation);
-        }
+            var roman = converter.Convert(number);
+            Assert.AreEqual(romanNumeral, roman.RomanNotation);
+        }        
     }
 }
