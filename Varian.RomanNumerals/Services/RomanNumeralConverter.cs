@@ -12,16 +12,47 @@ namespace Varian.RomanNumerals.Services
     {
         public RomanNumeral Convert(int number)
         {
-            if(number == 1)
+            var romanNumeral = new RomanNumeral()
             {
-                var romanNumeral = new RomanNumeral()
-                {
-                    RomanNotation = RomanMarker.One,
-                    Value = 1
-                };
-                return romanNumeral;
+                Value = number
+            };
 
+            if (number == 1)
+            {
+                romanNumeral.RomanNotation = RomanMarker.One;
+                return romanNumeral;
             }
+
+            if (number == 5)
+            {
+                romanNumeral.RomanNotation = RomanMarker.Five;
+                return romanNumeral;
+            }
+
+            if (number == 10)
+            {
+                romanNumeral.RomanNotation = RomanMarker.Ten;
+                return romanNumeral;
+            }
+
+            if (number == 50)
+            {
+                romanNumeral.RomanNotation = RomanMarker.Fifty;
+                return romanNumeral;
+            }
+
+            if (number == 100)
+            {
+                romanNumeral.RomanNotation = RomanMarker.Houndred;
+                return romanNumeral;
+            }
+
+            if (number == 1000)
+            {
+                romanNumeral.RomanNotation = RomanMarker.Thousand;
+                return romanNumeral;
+            }
+
             throw new NotImplementedException();
         }
 

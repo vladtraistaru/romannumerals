@@ -28,10 +28,25 @@ namespace Varian.RomanNumerals.Tests
         }
 
         [Test]
-        public void Convert_1()
+        public void ConvertBaseNotations()
         {
             var roman = converter.Convert(1);
             Assert.AreEqual("I", roman.RomanNotation);
-        }        
+
+            roman = converter.Convert(5);
+            Assert.AreEqual("V", roman.RomanNotation);
+
+            roman = converter.Convert(10);
+            Assert.AreEqual("X", roman.RomanNotation);
+
+            roman = converter.Convert(50);
+            Assert.AreEqual("L", roman.RomanNotation);
+
+            roman = converter.Convert(100);
+            Assert.AreEqual("C", roman.RomanNotation);
+
+            roman = converter.Convert(1000);
+            Assert.AreEqual("M", roman.RomanNotation);
+        }
     }
 }
