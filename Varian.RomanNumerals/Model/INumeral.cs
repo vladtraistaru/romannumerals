@@ -1,7 +1,8 @@
 ﻿
 namespace Varian.RomanNumerals.Model
 {
-    public interface INumeral
+    public abstract class AbstractNumeral
     {
+        public long Value { get; set; }
     }
 }

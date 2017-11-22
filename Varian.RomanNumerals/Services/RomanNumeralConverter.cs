@@ -12,6 +12,16 @@ namespace Varian.RomanNumerals.Services
     {
         public RomanNumeral Convert(int number)
         {
+            if(number == 1)
+            {
+                var romanNumeral = new RomanNumeral()
+                {
+                    RomanNotation = RomanMarker.One,
+                    Value = 1
+                };
+                return romanNumeral;
+
+            }
             throw new NotImplementedException();
         }
 

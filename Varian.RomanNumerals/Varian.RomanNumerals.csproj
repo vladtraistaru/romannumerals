@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DI\RomanNumeralModule.cs" />
     <Compile Include="Model\INumeral.cs" />
+    <Compile Include="Model\RomanMarker.cs" />
     <Compile Include="Model\RomanNumeral.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\IRomanNumeralConverter.cs" />

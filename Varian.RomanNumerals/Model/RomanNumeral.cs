@@ -1,7 +1,10 @@
 ﻿
+using System;
+
 namespace Varian.RomanNumerals.Model
 {
-    public class RomanNumeral : INumeral
+    public class RomanNumeral : AbstractNumeral
     {
+        public string RomanNotation { get; set; }
     }
 }

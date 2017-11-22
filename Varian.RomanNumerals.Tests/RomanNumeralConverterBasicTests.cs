@@ -7,7 +7,7 @@ using Varian.RomanNumerals.Services.Interfaces;
 namespace Varian.RomanNumerals.Tests
 {
     [TestFixture]
-    public class RomanNumeralConverterTests
+    public class RomanNumeralConverterBasicTests
     {
         private IRomanNumeralConverter converter;
         IKernel kernel = new StandardKernel(new RomanNumeralModule());
@@ -31,7 +31,7 @@ namespace Varian.RomanNumerals.Tests
         public void Convert_1()
         {
             var roman = converter.Convert(1);
-            Assert.AreEqual("I", 1);
-        }
+            Assert.AreEqual("I", roman.RomanNotation);
+        }        
     }
 }
