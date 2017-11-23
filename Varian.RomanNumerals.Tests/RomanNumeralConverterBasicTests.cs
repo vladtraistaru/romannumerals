@@ -1,5 +1,6 @@
 ﻿using Ninject;
 using NUnit.Framework;
+using System;
 using Varian.RomanNumerals.DI;
 using Varian.RomanNumerals.Services;
 using Varian.RomanNumerals.Services.Interfaces;
@@ -25,6 +26,26 @@ namespace Varian.RomanNumerals.Tests
             {
                 var converter = new RomanNumeralConverter();
             });            
+        }
+
+        [Test]
+        public void ConverterThrowsFor0()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                var converter = new RomanNumeralConverter();
+                converter.Convert(0);
+            });
+        }
+
+        [Test]
+        public void ConverterThrowsFor4000()
+        {
+            Assert.Throws<ArgumentException>(() =>
+            {
+                var converter = new RomanNumeralConverter();
+                converter.Convert(4000);
+            });
         }
 
         [Test]

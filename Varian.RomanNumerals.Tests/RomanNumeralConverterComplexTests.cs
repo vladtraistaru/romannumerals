@@ -46,6 +46,17 @@ namespace Varian.RomanNumerals.Tests
         [TestCase(1990, "M CM XC")]
         [TestCase(2014, "MM X IV")]
         [TestCase(2006, "MM VI")]
+        [TestCase(2004, "MM IV")]
+        [TestCase(650, "DC L")]
+        [TestCase(222, "CC XX II")]
+        [TestCase(1066, "M LX VI")]
+        [TestCase(714, "DCC X IV")]
+        [TestCase(650, "DC L")]
+        [TestCase(99, "XC IX")]
+        [TestCase(1066, "M LX VI")]
+        [TestCase(714, "DCC X IV")]
+        [TestCase(1999, "M CM XC IX")]
+        [TestCase(3999, "MMM CM XC IX")]
         public void GeneralTest_Complex(int number, string romanNumeral)
         {
             var roman = converter.Convert(number);

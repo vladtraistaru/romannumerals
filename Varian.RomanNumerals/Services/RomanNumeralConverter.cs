@@ -11,8 +11,28 @@ namespace Varian.RomanNumerals.Services
 {
     public class RomanNumeralConverter : IRomanNumeralConverter
     {
+        private Dictionary<int, char> PositionToMarkers = new Dictionary<int, char>()
+        {
+            {1, RomanMarker.One},
+            {2, RomanMarker.Ten},
+            {3, RomanMarker.Houndred},
+            {4, RomanMarker.Thousand}
+        };
+
+        private Dictionary<int, char> PositionToHalfInterval = new Dictionary<int, char>()
+        {
+            {1, RomanMarker.Five},
+            {2, RomanMarker.Fifty},
+            {3, RomanMarker.FiveHundred},
+        };
+
         public RomanNumeral Convert(int number)
         {
+            if (!number.IsInBetween(1, 3999, true))
+            {
+                throw new ArgumentException(nameof(number));
+            }
+
             var digits = new List<string>();
             var romanNumeral = new RomanNumeral()
             {
@@ -33,61 +53,8 @@ namespace Varian.RomanNumerals.Services
             }
 
             romanNumeral.RomanNotation = digits.Aggregate((a, b) => a + " " + b);
-
-            return romanNumeral;
-
-            if (number == 1)
-            {
-                romanNumeral.RomanNotation = RomanMarker.One;
-                return romanNumeral;
-            }
-
-            if (number == 5)
-            {
-                romanNumeral.RomanNotation = RomanMarker.Five;
-                return romanNumeral;
-            }
-
-            if (number == 10)
-            {
-                romanNumeral.RomanNotation = RomanMarker.Ten;
-                return romanNumeral;
-            }
-
-            if (number == 50)
-            {
-                romanNumeral.RomanNotation = RomanMarker.Fifty;
-                return romanNumeral;
-            }
-
-            if (number == 100)
-            {
-                romanNumeral.RomanNotation = RomanMarker.Houndred;
-                return romanNumeral;
-            }
-
-            if (number == 1000)
-            {
-                romanNumeral.RomanNotation = RomanMarker.Thousand;
-                return romanNumeral;
-            }
-
-            throw new NotImplementedException();
+            return romanNumeral;            
         }
-
-        private Dictionary<int, char> PositionToMarkers = new Dictionary<int, char>()
-        {
-            {1, RomanMarker.One},
-            {2, RomanMarker.Ten},
-            {3, RomanMarker.Houndred},
-            {4, RomanMarker.Thousand}
-        };
-
-        private Dictionary<int, char> PositionToHalfInterval = new Dictionary<int, char>()
-        {
-            {1, RomanMarker.Five},
-            {2, RomanMarker.Fifty}
-        };
 
         private string TransformDigit(int position, int digit)
         {            
@@ -108,22 +75,7 @@ namespace Varian.RomanNumerals.Services
 
             if (digit == 5)
             {
-                if (PositionToHalfInterval.ContainsKey(position))
-                {
-                    return PositionToHalfInterval[position].ToString();
-                }
-                else
-                {
-                    if(position == 3)
-                    {
-                        return "CCCCC";
-                    }
-                    else if(position == 4)
-                    {
-                        return "MMMMM";
-                    }                    
-                }
-                return PositionToMarkers[position].ToString() + PositionToHalfInterval[position];
+                return PositionToHalfInterval[position].ToString();                
             }
 
             if (digit == 6)
@@ -138,20 +90,10 @@ namespace Varian.RomanNumerals.Services
 
             if (digit == 9)
             {
-                if(position < 4)
-                {
-                    return PositionToMarkers[position].ToString() + PositionToMarkers[position + 1];
-                }
+                return PositionToMarkers[position].ToString() + PositionToMarkers[position + 1];
             }
 
-
-            throw new Exception("um..");
-            
-        }
-
-        public RomanNumeral Convert(long number)
-        {
-            throw new NotImplementedException();
-        }
+            throw new ArgumentException(nameof(digit));
+        }        
     }
 }
