@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Varian.StringParser.Services.Interfaces
+namespace Varian.StringTransform.Services.Interfaces
 {
-    public interface IStringParserService
+    public interface IStringTransform
     {
+        string Transform(string original);
     }
 }

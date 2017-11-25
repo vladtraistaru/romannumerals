@@ -7,8 +7,8 @@
     <ProjectGuid>{68398C01-F990-41B3-B8FC-F8DEEAF1C9BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Varian.StringParser</RootNamespace>
-    <AssemblyName>Varian.StringParser</AssemblyName>
+    <RootNamespace>Varian.StringTransform</RootNamespace>
+    <AssemblyName>Varian.StringTransform</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,16 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DI\StringParserModule.cs" />
+    <Compile Include="DI\StringTransformModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Interfaces\IStringParserService.cs" />
-    <Compile Include="Services\StringParserService.cs" />
+    <Compile Include="Services\Interfaces\IStringTransform.cs" />
+    <Compile Include="Services\RomanNumeralStringTransformNumbers.cs" />
+    <Compile Include="Services\StringTransformNumbers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Varian.RomanNumerals\Varian.RomanNumerals.csproj">
+      <Project>{d4102f7d-b3c8-4410-9879-9c4e4dd52e00}</Project>
+      <Name>Varian.RomanNumerals</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

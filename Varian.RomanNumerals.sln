@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.Common.Tests", "Vari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.ConsoleApp", "Varian.ConsoleApp\Varian.ConsoleApp.csproj", "{A903185A-B777-4D97-9B17-501729E0CFDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.StringParser", "Varian.StringParser\Varian.StringParser.csproj", "{68398C01-F990-41B3-B8FC-F8DEEAF1C9BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.StringTransform", "Varian.StringParser\Varian.StringTransform.csproj", "{68398C01-F990-41B3-B8FC-F8DEEAF1C9BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.StringParser.Tests", "Varian.StringParser.Tests\Varian.StringParser.Tests.csproj", "{1DB40F0B-E08B-4CD8-9A7A-E1CB01660F24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Varian.StringTransform.Tests", "Varian.StringParser.Tests\Varian.StringTransform.Tests.csproj", "{1DB40F0B-E08B-4CD8-9A7A-E1CB01660F24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
