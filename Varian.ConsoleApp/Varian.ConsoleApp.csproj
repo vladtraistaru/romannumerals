@@ -61,6 +61,10 @@
       <Project>{d4102f7d-b3c8-4410-9879-9c4e4dd52e00}</Project>
       <Name>Varian.RomanNumerals</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Varian.StringParser\Varian.StringTransform.csproj">
+      <Project>{68398c01-f990-41b3-b8fc-f8deeaf1c9ba}</Project>
+      <Name>Varian.StringTransform</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
